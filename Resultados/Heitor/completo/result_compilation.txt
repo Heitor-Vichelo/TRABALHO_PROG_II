@@ -1,0 +1,5 @@
+In file included from dado.c:1:
+dado.h:1: warning: header guard ‘_DADO_H_’ followed by ‘#define’ of a different macro [-Wheader-guard]
+    1 | #ifndef _DADO_H_
+dado.h:2: note: ‘_DADO_H’ is defined here; did you mean ‘_DADO_H_’?
+    2 | #define _DADO_H
