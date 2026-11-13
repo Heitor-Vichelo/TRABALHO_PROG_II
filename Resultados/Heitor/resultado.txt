@@ -1,6 +1,6 @@
 Arquivos Esperados Corretos: 9 de 9
 Pastas Compiladas Corretamente: 6 de 6 
-Pastas Linkadas Corretamente: 1 de 6
+Pastas Linkadas Corretamente: 3 de 6
 Teste main
   - Resultados corretos: 0 de 10
   - Valgrinds corretos: 0 de 10
@@ -19,11 +19,11 @@ Teste mapa
 Nota de Heitor para o teste mapa: 0
 Teste celula
   - Resultados corretos: 0 de 10
-  - Valgrinds corretos: 0 de 10
+  - Valgrinds corretos: 2 de 10
 Nota de Heitor para o teste celula: 0
 Teste acao_monstro
-  - Resultados corretos: 0 de 10
-  - Valgrinds corretos: 0 de 10
-Nota de Heitor para o teste acao_monstro: 0
-Nota de Heitor: 0+(1.50)+(0)+(0)+(0)+(0)+(0)
-Nota de Heitor: 1.50
+  - Resultados corretos: 10 de 10
+  - Valgrinds corretos: 10 de 10
+Nota de Heitor para o teste acao_monstro: .50
+Nota de Heitor: 0+(1.50)+(.50)+(0)+(0)+(0)+(0)
+Nota de Heitor: 2.00
