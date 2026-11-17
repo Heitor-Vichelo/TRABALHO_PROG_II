@@ -1,11 +1,11 @@
 =========== ESTADO ============
 [INICIO] <- OTAVIO, PAULA, RAFAEL
-VAZIA<- LUCAS
-OURO 3
-VAZIA<- MARIA
-MONSTRO RATO (F:2 XP:5)<- NINA
-VAZIA
-VAZIA
+[1] VAZIA <- LUCAS
+[2] OURO 3
+[3] VAZIA <- MARIA
+[4] MONSTRO RATO (F:2 XP:5) <- NINA
+[5] VAZIA
+[6] VAZIA
 [FIM]
 -------------------------------
 - LUCAS: casa 1 | forca 3 | xp 0 | ouro 0
@@ -18,12 +18,12 @@ VAZIA
 ===============================
 =========== ESTADO ============
 [INICIO] <- PAULA, RAFAEL
-VAZIA<- LUCAS
-OURO 3<- MARIA
-VAZIA<- OTAVIO
-MONSTRO RATO (F:2 XP:5)<- NINA
-VAZIA
-VAZIA
+[1] VAZIA <- LUCAS
+[2] OURO 3 <- MARIA
+[3] VAZIA <- OTAVIO
+[4] MONSTRO RATO (F:2 XP:5) <- NINA
+[5] VAZIA
+[6] VAZIA
 [FIM]
 -------------------------------
 - LUCAS: casa 1 | forca 3 | xp 0 | ouro 0
@@ -44,12 +44,12 @@ VAZIA
 ===============================
 =========== ESTADO ============
 [INICIO] <- PAULA, RAFAEL
-VAZIA<- NINA
-OURO 3<- LUCAS
-VAZIA
-MONSTRO RATO (F:2 XP:5)
-VAZIA
-VAZIA<- OTAVIO
+[1] VAZIA <- NINA
+[2] OURO 3 <- LUCAS
+[3] VAZIA
+[4] MONSTRO RATO (F:2 XP:5)
+[5] VAZIA
+[6] VAZIA <- OTAVIO
 [FIM] <- MARIA
 -------------------------------
 - LUCAS: casa 2 | forca 3 | xp 0 | ouro 3

@@ -1,17 +1,17 @@
 =========== ESTADO ============
 [INICIO] <- ZECA, BIA
-VOLTA 5
-AVANCA 3<- ALICE
-VOLTA 1
-VAZIA
-AVANCA 4
-VOLTA 2
-VAZIA
-VOLTA 7
-AVANCA 1
-VAZIA
-AVANCA 10
-VOLTA 4
+[1] VOLTA 5
+[2] AVANCA 3 <- ALICE
+[3] VOLTA 1
+[4] VAZIA
+[5] AVANCA 4
+[6] VOLTA 2
+[7] VAZIA
+[8] VOLTA 7
+[9] AVANCA 1
+[10] VAZIA
+[11] AVANCA 10
+[12] VOLTA 4
 [FIM]
 -------------------------------
 - ZECA: casa 0 | forca 2 | xp 0 | ouro 0
@@ -21,18 +21,18 @@ VOLTA 4
 ===============================
 =========== ESTADO ============
 [INICIO]
-VOLTA 5<- ZECA
-AVANCA 3<- ALICE
-VOLTA 1
-VAZIA<- BIA
-AVANCA 4
-VOLTA 2
-VAZIA
-VOLTA 7
-AVANCA 1
-VAZIA
-AVANCA 10
-VOLTA 4
+[1] VOLTA 5 <- ZECA
+[2] AVANCA 3 <- ALICE
+[3] VOLTA 1
+[4] VAZIA <- BIA
+[5] AVANCA 4
+[6] VOLTA 2
+[7] VAZIA
+[8] VOLTA 7
+[9] AVANCA 1
+[10] VAZIA
+[11] AVANCA 10
+[12] VOLTA 4
 [FIM]
 -------------------------------
 - ZECA: casa 1 | forca 2 | xp 0 | ouro 0
@@ -42,18 +42,18 @@ VOLTA 4
 ===============================
 =========== ESTADO ============
 [INICIO] <- ZECA
-VOLTA 5
-AVANCA 3<- BIA
-VOLTA 1
-VAZIA<- ALICE
-AVANCA 4
-VOLTA 2
-VAZIA
-VOLTA 7
-AVANCA 1
-VAZIA
-AVANCA 10
-VOLTA 4
+[1] VOLTA 5
+[2] AVANCA 3 <- BIA
+[3] VOLTA 1
+[4] VAZIA <- ALICE
+[5] AVANCA 4
+[6] VOLTA 2
+[7] VAZIA
+[8] VOLTA 7
+[9] AVANCA 1
+[10] VAZIA
+[11] AVANCA 10
+[12] VOLTA 4
 [FIM]
 -------------------------------
 - ZECA: casa 0 | forca 2 | xp 0 | ouro 0
@@ -68,18 +68,18 @@ VOLTA 4
 ===============================
 =========== ESTADO ============
 [INICIO]
-VOLTA 5
-AVANCA 3
-VOLTA 1<- ZECA
-VAZIA<- BIA
-AVANCA 4
-VOLTA 2
-VAZIA
-VOLTA 7
-AVANCA 1
-VAZIA
-AVANCA 10
-VOLTA 4
+[1] VOLTA 5
+[2] AVANCA 3
+[3] VOLTA 1 <- ZECA
+[4] VAZIA <- BIA
+[5] AVANCA 4
+[6] VOLTA 2
+[7] VAZIA
+[8] VOLTA 7
+[9] AVANCA 1
+[10] VAZIA
+[11] AVANCA 10
+[12] VOLTA 4
 [FIM] <- ALICE
 -------------------------------
 - ZECA: casa 3 | forca 2 | xp 0 | ouro 0

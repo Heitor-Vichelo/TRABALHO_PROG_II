@@ -6,16 +6,16 @@
 ===============================
 =========== ESTADO ============
 [INICIO] <- TIAGO, BRUNA, AMANDA
-VOLTA 1
-VOLTA 2
-VOLTA 3
-VAZIA<- CAIO
-VOLTA 4
-VAZIA
-VAZIA
-OURO 1
-VAZIA
-VAZIA
+[1] VOLTA 1
+[2] VOLTA 2
+[3] VOLTA 3
+[4] VAZIA <- CAIO
+[5] VOLTA 4
+[6] VAZIA
+[7] VAZIA
+[8] OURO 1
+[9] VAZIA
+[10] VAZIA
 [FIM]
 -------------------------------
 - TIAGO: casa 0 | forca 3 | xp 0 | ouro 0
@@ -32,16 +32,16 @@ VAZIA
 ===============================
 =========== ESTADO ============
 [INICIO] <- TIAGO, CAIO, AMANDA
-VOLTA 1
-VOLTA 2
-VOLTA 3
-VAZIA
-VOLTA 4
-VAZIA<- BRUNA
-VAZIA
-OURO 1
-VAZIA
-VAZIA
+[1] VOLTA 1
+[2] VOLTA 2
+[3] VOLTA 3
+[4] VAZIA
+[5] VOLTA 4
+[6] VAZIA <- BRUNA
+[7] VAZIA
+[8] OURO 1
+[9] VAZIA
+[10] VAZIA
 [FIM]
 -------------------------------
 - TIAGO: casa 0 | forca 3 | xp 0 | ouro 0

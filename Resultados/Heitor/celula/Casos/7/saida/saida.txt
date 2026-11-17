@@ -1,6 +1,6 @@
 =========== ESTADO ============
 [INICIO] <- PEDRO, JOAO
-MONSTRO GUARDIAO (F:3 XP:7)
+[1] MONSTRO GUARDIAO (F:3 XP:7)
 [FIM]
 -------------------------------
 - PEDRO: casa 0 | forca 2 | xp 0 | ouro 0
@@ -9,7 +9,7 @@ MONSTRO GUARDIAO (F:3 XP:7)
 ===============================
 =========== ESTADO ============
 [INICIO] <- PEDRO, JOAO
-MONSTRO GUARDIAO (F:3 XP:7)
+[1] MONSTRO GUARDIAO (F:3 XP:7)
 [FIM]
 -------------------------------
 - PEDRO: casa 0 | forca 2 | xp 0 | ouro 0
@@ -18,7 +18,7 @@ MONSTRO GUARDIAO (F:3 XP:7)
 ===============================
 =========== ESTADO ============
 [INICIO] <- PEDRO
-MONSTRO GUARDIAO (F:3 XP:7)
+[1] MONSTRO GUARDIAO (F:3 XP:7)
 [FIM] <- JOAO
 -------------------------------
 - PEDRO: casa 0 | forca 2 | xp 0 | ouro 0
