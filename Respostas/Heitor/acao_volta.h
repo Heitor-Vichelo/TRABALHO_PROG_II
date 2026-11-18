@@ -5,14 +5,14 @@
 
 typedef struct Volta Volta;
 
-Avanco *criaAvanco(int qtd);
+Volta *criaVolta(int qtd);
 
-Avanco *leAvanco();
+Volta *leVolta();
 
-int executaAvanco(void *dado, Jogador *j);
+int executaVolta(void *dado, Jogador *j);
 
-void imprimeAvanco(void *dado);
+void imprimeVolta(void *dado);
 
-void desalocaAvanco(void *dado);
+void desalocaVolta(void *dado);
 
 #endif 
