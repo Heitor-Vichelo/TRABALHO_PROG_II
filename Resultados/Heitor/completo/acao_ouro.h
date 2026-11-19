@@ -26,8 +26,6 @@ Ouro *leOuro();
  * @return 0 se o jogador vencer ou RECUO_CELULA se perder
  */
 
-//int executaOuro(void *dado, Jogador *j);
-
 int executaOuro(void *dado, Jogador *j);
 
 /**

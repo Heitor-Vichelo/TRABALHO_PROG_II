@@ -47,14 +47,17 @@ int estaOcupadaCelula(Celula *c){
     return 1;
 }
 
-// [2] MONSTRO GOBLIN (F:3 XP:10) <- CARLA
 void imprimeCelula(Celula *c, int posicao){
     printf("[%d] ", posicao);
     c->imprime(c->acao);
-    if(estaOcupadaCelula(c)){
+    
+    if(estaOcupadaCelula(c))
+    {
         Jogador *j = (Jogador*) c->ocupante;
         printf(" <- %s\n", obtemNomeJogador(j));
-    } else {
+    }
+    else
+    {
         printf("\n");
     }
     

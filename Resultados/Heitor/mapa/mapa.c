@@ -4,7 +4,6 @@
 #include <stdlib.h>
 
 #include "jogador.h"
-//typedef struct Mapa Mapa;
 
 struct Mapa
 {
@@ -69,19 +68,6 @@ void moveJogadorMapa(Mapa *m, Jogador *j, int posicao) {
     }
 }
 
-/*
-void recuaJogadorMapa(Mapa *m, Jogador *j, int origem){
-    int posicao = origem - 1;
-
-    while(posicao > 0 && obtemOcupanteMapa(m, posicao) != NULL){
-        posicao--;
-    }
-
-    moveJogadorMapa(m, j, posicao);
-}
-*/
-
-
 void recuaJogadorMapa(Mapa *m, Jogador *j, int origem) {
     int posicao = origem - 1;
 
@@ -97,13 +83,15 @@ void recuaJogadorMapa(Mapa *m, Jogador *j, int origem) {
 }
 
 void imprimeCelulasMapa(Mapa *m){
-    for(int i = 0; i < m->qtdCelulas; i++){
+    for(int i = 0; i < m->qtdCelulas; i++)
+    {
         imprimeCelula(m->celula[i], i + 1);
     }
 }
 
 void desalocaMapa(Mapa *m){
-    for(int i = 0; i < m->qtdCelulas; i++){
+    for(int i = 0; i < m->qtdCelulas; i++)
+    {
         defineOcupanteCelula(m->celula[i], NULL);
         desalocaCelula(m->celula[i]);
     }

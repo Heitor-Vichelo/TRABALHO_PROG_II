@@ -33,8 +33,8 @@ Jogo *criaJogo(){
 void leMapa(Mapa *m) {
     char opcao[TAM_OPCAO_JOGO];
 
-    scanf(" %15s", opcao); // INICIO
-    scanf(" %15s", opcao); // MAPA
+    scanf(" %[^\n]\n", opcao); // INICIO
+    // scanf(" %15s", opcao); // MAPA
 
     while (scanf(" %15s", opcao) == 1) {
         if (!strcmp(opcao, "OURO")) 
@@ -210,40 +210,6 @@ int deslocaJogador(Jogo *jogo, Jogador *jogador, int destino) {
     moveJogadorMapa(jogo->mapa, jogador, destino);
     return 1;
 }
-/*
-int deslocaJogador(Jogo *jogo, Jogador *jogador, int destino) {
-    int fim = obtemPosicaoFimMapa(jogo->mapa);
-
-    if (destino <= 0) {
-        moveJogadorMapa(jogo->mapa, jogador, 0);
-        return 1;
-    }
-
-    if (destino >= fim) {
-        moveJogadorMapa(jogo->mapa, jogador, fim);
-        jogo->vencedor = jogador;
-        return 1;
-    }
-
-    Jogador *ocupante = obtemOcupanteMapa(jogo->mapa, destino);
-
-    if (ocupante != NULL && ocupante != jogador) {
-        jogo->disputasTotais++;
-
-        if (venceDisputaJogador(jogador, ocupante)) {
-            incrementaDisputasVencidasJogador(jogador);
-            recuaJogadorMapa(jogo->mapa, ocupante, destino);
-        } else {
-            incrementaDisputasVencidasJogador(ocupante);
-            recuaJogadorMapa(jogo->mapa, jogador, destino);
-            return 0;
-        }
-    }
-
-    moveJogadorMapa(jogo->mapa, jogador, destino);
-    return 1;
-}
-*/
 
 void executaRolagens(Jogo *jogo, int quantidade) {
     for (int i = 0; i < quantidade && jogo->vencedor == NULL; i++) {
@@ -281,7 +247,6 @@ void executaRolagens(Jogo *jogo, int quantidade) {
 - Situacao: EM ANDAMENTO
 ===============================
 */
-
 void imprimeEstadoJogo(Jogo *jogo) {
     printf("=========== ESTADO ============\n");
  
@@ -317,42 +282,6 @@ void imprimeEstadoJogo(Jogo *jogo) {
  
     printf("===============================\n");
 }
-
-/*
-void imprimeEstadoJogo(Jogo *jogo) {
-    printf("=========== ESTADO ============\n");
-
-    printf("[INICIO]");
-    for (int i = 0; i < jogo->qtdJogadores; i++) {
-        if (obtemPosicaoJogador(jogo->jogadores[i]) == 0) {
-            printf(" <- %s", obtemNomeJogador(jogo->jogadores[i]));
-        }
-    }
-    printf("\n");
-
-    imprimeCelulasMapa(jogo->mapa);
-
-    printf("[FIM]");
-    if (jogo->vencedor != NULL) {
-        printf(" <- %s", obtemNomeJogador(jogo->vencedor));
-    }
-    printf("\n");
-
-    printf("-------------------------------\n");
-
-    for (int i = 0; i < jogo->qtdJogadores; i++) {
-        printEstadoJogador(jogo->jogadores[i]);
-    }
-
-    if (jogo->vencedor == NULL) {
-        printf("- Situacao: EM ANDAMENTO\n");
-    } else {
-        printf("- Situacao: VENCEDOR %s\n", obtemNomeJogador(jogo->vencedor));
-    }
-
-    printf("===============================\n");
-}
-*/
 
 /*
 =========== RANKING ===========

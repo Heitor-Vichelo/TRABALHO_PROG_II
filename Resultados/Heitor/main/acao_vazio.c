@@ -10,5 +10,5 @@ void imprimeVazio(void *dado){
 }
 
 void desalocaVazio(void *dado){
-    /* Nada precisa ser liberado. */
+    // Nada precisa ser liberado.
 }
