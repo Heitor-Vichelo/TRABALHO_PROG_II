@@ -57,22 +57,39 @@ void retiraJogadorMapa(Mapa *m, Jogador *j){
     }
 }
 
-void moveJogadorMapa(Mapa *m, Jogador *j, int posicao){
+void moveJogadorMapa(Mapa *m, Jogador *j, int posicao) {
     retiraJogadorMapa(m, j);
 
     definePosicaoJogador(j, posicao);
 
     Celula *c = obtemCelulaMapa(m, posicao);
 
-    if(c){
+    if (c != NULL) {
         defineOcupanteCelula(c, j);
     }
 }
 
+/*
 void recuaJogadorMapa(Mapa *m, Jogador *j, int origem){
     int posicao = origem - 1;
 
     while(posicao > 0 && obtemOcupanteMapa(m, posicao) != NULL){
+        posicao--;
+    }
+
+    moveJogadorMapa(m, j, posicao);
+}
+*/
+
+
+void recuaJogadorMapa(Mapa *m, Jogador *j, int origem) {
+    int posicao = origem - 1;
+
+    while (posicao > 0) {
+        Jogador *ocupante = obtemOcupanteMapa(m, posicao);
+
+        if (ocupante == NULL || ocupante == j) break;
+
         posicao--;
     }
 

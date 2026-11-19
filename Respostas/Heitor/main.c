@@ -1,9 +1,15 @@
-#include <stdio.h>
-#include <string.h>
+#include "jogo.h"
 #include <stdlib.h>
-#include <jogo.h>
 
-int main(){
+int main(void) {
+    Jogo *jogo = criaJogo();
+
+    if (jogo == NULL) {
+        return 1;
+    }
+
+    leJogo(jogo);
+    desalocaJogo(jogo);
 
     return 0;
 }

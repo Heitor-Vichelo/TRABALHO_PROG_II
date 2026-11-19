@@ -1,6 +1,6 @@
 #ifndef _DADO_H_
-#define _DADO_H
+#define _DADO_H_
 
-int RolaDado();
+int RolaDado(void);
 
 #endif
