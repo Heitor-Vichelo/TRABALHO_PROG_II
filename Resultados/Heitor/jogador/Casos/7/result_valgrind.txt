@@ -1,15 +1,15 @@
-==855093== Memcheck, a memory error detector
-==855093== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
-==855093== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
-==855093== Command: Resultados/Heitor/jogador/prog Resultados/Heitor/jogador/Casos/7
-==855093== Parent PID: 855092
-==855093== 
-==855093== 
-==855093== HEAP SUMMARY:
-==855093==     in use at exit: 0 bytes in 0 blocks
-==855093==   total heap usage: 16 allocs, 16 frees, 8,768 bytes allocated
-==855093== 
-==855093== All heap blocks were freed -- no leaks are possible
-==855093== 
-==855093== For lists of detected and suppressed errors, rerun with: -s
-==855093== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==868625== Memcheck, a memory error detector
+==868625== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==868625== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==868625== Command: Resultados/Heitor/jogador/prog Resultados/Heitor/jogador/Casos/7
+==868625== Parent PID: 868624
+==868625== 
+==868625== 
+==868625== HEAP SUMMARY:
+==868625==     in use at exit: 0 bytes in 0 blocks
+==868625==   total heap usage: 16 allocs, 16 frees, 8,768 bytes allocated
+==868625== 
+==868625== All heap blocks were freed -- no leaks are possible
+==868625== 
+==868625== For lists of detected and suppressed errors, rerun with: -s
+==868625== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

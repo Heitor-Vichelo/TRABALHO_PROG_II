@@ -1,15 +1,15 @@
-==856563== Memcheck, a memory error detector
-==856563== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
-==856563== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
-==856563== Command: Resultados/Heitor/celula/prog Resultados/Heitor/celula/Casos/1
-==856563== Parent PID: 856562
-==856563== 
-==856563== 
-==856563== HEAP SUMMARY:
-==856563==     in use at exit: 0 bytes in 0 blocks
-==856563==   total heap usage: 50 allocs, 50 frees, 10,180 bytes allocated
-==856563== 
-==856563== All heap blocks were freed -- no leaks are possible
-==856563== 
-==856563== For lists of detected and suppressed errors, rerun with: -s
-==856563== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==870051== Memcheck, a memory error detector
+==870051== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==870051== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==870051== Command: Resultados/Heitor/celula/prog Resultados/Heitor/celula/Casos/1
+==870051== Parent PID: 870050
+==870051== 
+==870051== 
+==870051== HEAP SUMMARY:
+==870051==     in use at exit: 0 bytes in 0 blocks
+==870051==   total heap usage: 50 allocs, 50 frees, 10,180 bytes allocated
+==870051== 
+==870051== All heap blocks were freed -- no leaks are possible
+==870051== 
+==870051== For lists of detected and suppressed errors, rerun with: -s
+==870051== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

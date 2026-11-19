@@ -33,8 +33,8 @@ Jogo *criaJogo(){
 void leMapa(Mapa *m) {
     char opcao[TAM_OPCAO_JOGO];
 
+    // le o INICIO MAPA e descarta
     scanf(" %[^\n]\n", opcao); // INICIO
-    // scanf(" %15s", opcao); // MAPA
 
     while (scanf(" %15s", opcao) == 1) {
         if (!strcmp(opcao, "OURO")) 
@@ -74,24 +74,37 @@ void leJogo(Jogo *j) {
 
     leMapa(j->mapa);
 
-    while (scanf(" %19s", opcao) == 1) {
-        if (!strcmp(opcao, "J")) {
+    while (scanf(" %19s", opcao) == 1) 
+    {
+        if (!strcmp(opcao, "J")) 
+        {
             CadastraJogadorJogo(j);
-        } else if (!strcmp(opcao, "ROLAGEM")) {
+        } 
+        else if (!strcmp(opcao, "ROLAGEM")) 
+        {
             int qtd;
             scanf("%d", &qtd);
             executaRolagens(j, qtd);
-        } else if (!strcmp(opcao, "E")) {
+        } 
+        else if (!strcmp(opcao, "E")) 
+        {
             scanf(" %19s", opcao);
 
-            if (!strcmp(opcao, "ESTADO")) {
+            if (!strcmp(opcao, "ESTADO")) 
+            {
                 imprimeEstadoJogo(j);
-            } else if (!strcmp(opcao, "RANKING")) {
+            } 
+            else if (!strcmp(opcao, "RANKING")) 
+            {
                 imprimeRankingJogo(j);
-            } else if (!strcmp(opcao, "RELATORIO")) {
+            } 
+            else if (!strcmp(opcao, "RELATORIO")) 
+            {
                 imprimeRelatorioJogo(j);
             }
-        } else if (!strcmp(opcao, "F")) {
+        } 
+        else if (!strcmp(opcao, "F")) 
+        {
             break;
         }
     }
@@ -100,6 +113,7 @@ void leJogo(Jogo *j) {
 void CadastraJogadorJogo(Jogo *j) {
     Jogador *novo = leJogador();
 
+    // se ja exitir jogador com esse nome nao ira cadastrar outro
     if (JaExisteJogador(j, novo)) {
         desalocaJogador(novo);
         return;
@@ -118,10 +132,10 @@ void CadastraJogadorJogo(Jogo *j) {
 }
 
 int JaExisteJogador(Jogo *jogo, Jogador *jogador) {
-    for (int i = 0; i < jogo->qtdJogadores; i++) {
-        if (comparaNomeJogador(
-                jogo->jogadores[i],
-                obtemNomeJogador(jogador))) {
+    for (int i = 0; i < jogo->qtdJogadores; i++) 
+    {
+        if (comparaNomeJogador(jogo->jogadores[i], obtemNomeJogador(jogador))) 
+        {
             return 1;
         }
     }
@@ -161,15 +175,17 @@ void processaTurno(Jogo *jogo, Jogador *jogador) {
 
     int deslocamento = executaAcaoCelula(celula, jogador);
 
-    if (deslocamento == RECUO_CELULA) {
+    if (deslocamento == RECUO_CELULA) 
+    {
         recuaJogadorMapa(jogo->mapa, jogador, obtemPosicaoJogador(jogador));
         return;
     }
 
-    if (deslocamento != 0) {
+    if (deslocamento != 0) 
+    {
         novaPosicao = obtemPosicaoJogador(jogador) + deslocamento;
 
-        // A nova célula não executa sua ação.
+        // A nova célula não executa sua acao.
         deslocaJogador(jogo, jogador, novaPosicao);
     }
 }
@@ -177,12 +193,14 @@ void processaTurno(Jogo *jogo, Jogador *jogador) {
 int deslocaJogador(Jogo *jogo, Jogador *jogador, int destino) {
     int fim = obtemPosicaoFimMapa(jogo->mapa);
  
-    if (destino <= 0) {
+    if (destino <= 0) 
+    {
         moveJogadorMapa(jogo->mapa, jogador, 0);
         return 1;
     }
  
-    if (destino >= fim) {
+    if (destino >= fim) 
+    {
         moveJogadorMapa(jogo->mapa, jogador, fim);
         jogo->vencedor = jogador;
         return 1;
@@ -190,17 +208,23 @@ int deslocaJogador(Jogo *jogo, Jogador *jogador, int destino) {
  
     Jogador *ocupante = obtemOcupanteMapa(jogo->mapa, destino);
  
-    if (ocupante != NULL && ocupante != jogador) {
+    if (ocupante != NULL && ocupante != jogador) 
+    {
         jogo->disputasTotais++;
- 
-        // O jogador da vez sai da casa antiga antes de qualquer recuo,
-        // para que essa casa seja considerada livre.
+        
+        /**
+         * O jogador da vez sai da casa antiga antes de qualquer recuo,
+         * para que essa casa seja considerada livre.
+         */
         retiraJogadorMapa(jogo->mapa, jogador);
  
-        if (venceDisputaJogador(jogador, ocupante)) {
+        if (venceDisputaJogador(jogador, ocupante))
+        {
             incrementaDisputasVencidasJogador(jogador);
             recuaJogadorMapa(jogo->mapa, ocupante, destino);
-        } else {
+        } 
+        else 
+        {
             incrementaDisputasVencidasJogador(ocupante);
             recuaJogadorMapa(jogo->mapa, jogador, destino);
             return 0;
