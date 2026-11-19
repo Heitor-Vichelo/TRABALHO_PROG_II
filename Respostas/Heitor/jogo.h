@@ -30,4 +30,6 @@ void imprimeRelatorioJogo(Jogo *jogo);
 
 void desalocaJogo(Jogo *jogo);
 
+int deslocaJogador(Jogo *jogo, Jogador *jogador, int destino);
+
 #endif

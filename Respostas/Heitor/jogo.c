@@ -1,24 +1,27 @@
 #include "jogo.h"
+#include "jogador.h"
 #include "acao_vazio.h"
 #include "acao_avanco.h"
 #include "acao_volta.h"
 #include "acao_item.h"
 #include "acao_monstro.h"
 #include "acao_ouro.h"
+#include "dado.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
 #define TAM_OPCAO_JOGO 20
+#define POSICAO_INICIAL 0
 
 struct Jogo {
     Mapa *mapa;
     Jogador **jogadores;
+    Jogador *vencedor;
     int qtdJogadores;
     int jogadorAtual;
     int jogadasTotais;
     int disputasTotais;
-    Jogador *vencedor;
 };
 
 Jogo *criaJogo(){
@@ -136,10 +139,83 @@ void desalocaJogo(Jogo *j) {
     free(j);
 }
 
-void executaRolagens(Jogo *j, int quantidade) {
-    for (int i = 0;
-         i < quantidade && j->vencedor == NULL;
-         i++) {
-        executaJogadaJogo(j);
+void processaTurno(Jogo *jogo, Jogador *jogador) {
+    incrementaJogadasJogador(jogador);
+    jogo->jogadasTotais++;
+
+    int novaPosicao = obtemPosicaoJogador(jogador) + RolaDado();
+
+    // Termina a jogada se o jogador perder uma disputa.
+    if (!deslocaJogador(jogo, jogador, novaPosicao)) {
+        return;
+    }
+
+    // O jogador venceu ou alcançou o fim.
+    if (jogo->vencedor != NULL) {
+        return;
+    }
+
+    Celula *celula = obtemCelulaMapa( jogo->mapa, obtemPosicaoJogador(jogador));
+
+    if (celula == NULL) return;
+
+    int deslocamento = executaAcaoCelula(celula, jogador);
+
+    if (deslocamento == RECUO_CELULA) {
+        recuaJogadorMapa(jogo->mapa, jogador, obtemPosicaoJogador(jogador));
+        return;
+    }
+
+    if (deslocamento != 0) {
+        novaPosicao = obtemPosicaoJogador(jogador) + deslocamento;
+
+        // A nova célula não executa sua ação.
+        deslocaJogador(jogo, jogador, novaPosicao);
+    }
+}
+
+int deslocaJogador(Jogo *jogo, Jogador *jogador, int destino) {
+    int fim = obtemPosicaoFimMapa(jogo->mapa);
+
+    if (destino <= 0) {
+        moveJogadorMapa(jogo->mapa, jogador, 0);
+        return 1;
+    }
+
+    if (destino >= fim) {
+        moveJogadorMapa(jogo->mapa, jogador, fim);
+        jogo->vencedor = jogador;
+        return 1;
+    }
+
+    Jogador *ocupante = obtemOcupanteMapa(jogo->mapa, destino);
+
+    if (ocupante != NULL && ocupante != jogador) {
+        jogo->disputasTotais++;
+
+        if (venceDisputaJogador(jogador, ocupante)) {
+            incrementaDisputasVencidasJogador(jogador);
+            recuaJogadorMapa(jogo->mapa, ocupante, destino);
+        } else {
+            incrementaDisputasVencidasJogador(ocupante);
+            recuaJogadorMapa(jogo->mapa, jogador, destino);
+            return 0;
+        }
+    }
+
+    moveJogadorMapa(jogo->mapa, jogador, destino);
+    return 1;
+}
+
+void executaRolagens(Jogo *jogo, int quantidade) {
+    for (int i = 0; i < quantidade && jogo->vencedor == NULL; i++) {
+
+        Jogador *jogador = jogo->jogadores[jogo->jogadorAtual];
+
+        processaTurno(jogo, jogador);
+
+        if (jogo->vencedor == NULL) {
+            jogo->jogadorAtual = (jogo->jogadorAtual + 1) % jogo->qtdJogadores;
+        }
     }
 }

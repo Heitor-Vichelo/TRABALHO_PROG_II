@@ -63,10 +63,9 @@ void moveJogadorMapa(Mapa *m, Jogador *j, int posicao){
     definePosicaoJogador(j, posicao);
 
     Celula *c = obtemCelulaMapa(m, posicao);
-
-    if(c){
-        defineOcupanteCelula(c, j);
-    }
+    
+    defineOcupanteCelula(c, j);
+    
 }
 
 void recuaJogadorMapa(Mapa *m, Jogador *j, int origem){
